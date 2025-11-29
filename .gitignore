@@ -141,7 +141,7 @@ cython_debug/
 
 # Data files
 data/raw/
-etl/data/processed/
+data/processed/
 data/output/
 
 # Logs
