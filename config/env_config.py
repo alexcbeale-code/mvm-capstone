@@ -46,7 +46,9 @@ def setup_env(argv):
     
     print(f"Loading environment variables from: {env_file}")
     load_dotenv(env_file, override=True)
-
+    if not os.getenv("API_KEY"):
+        raise ValueError("API key does not exist in environment file")
+    
 
 def cleanup_previous_env():
     """
@@ -72,10 +74,7 @@ def cleanup_previous_env():
     environments.
     """
     keys_to_clear = [
-        'SOURCE_DB_NAME', 'SOURCE_DB_USER', 'SOURCE_DB_PASSWORD',
-        'SOURCE_DB_HOST', 'SOURCE_DB_PORT',
-        'TARGET_DB_NAME', 'TARGET_DB_USER', 'TARGET_DB_PASSWORD',
-        'TARGET_DB_HOST', 'TARGET_DB_PORT'
+        'API_KEY'
     ]
     for key in keys_to_clear:
         if key in os.environ:

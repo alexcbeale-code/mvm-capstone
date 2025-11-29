@@ -3,12 +3,12 @@ requires = ["setuptools>=45", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "ETL-Project-Walkthough"
+name = "MVM-Capstone"
 version = "0.1.0"
-description = "An ETL project for extracting, transforming, and loading data."
-authors = [{name = "Your Name", email = "ewright@digitalfutures.com"}]
+description = "A data project to find the level of engagement by demographic of MakeVotesMatter (MVM)"
+authors = [{name = "Alexander Beale", email = "alexcbeale@gmail.com"}]
 readme = "README.md"
-requires-python = ">=3.6"
+requires-python = ">=3.12"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
@@ -17,7 +17,7 @@ classifiers = [
 dynamic = ["dependencies"]
 
 [project.urls]
-Homepage = "https://github.com/de-2506-a/etl-walkthrough"
+Homepage = "https://github.com/alexcbeale-code/mvm-capstone.git"
 
 [project.scripts]
 run_etl = "scripts.run_etl:main"
