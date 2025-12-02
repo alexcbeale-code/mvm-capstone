@@ -23,7 +23,7 @@ def main():
         logger.info("Starting transformation phase")
         transformed_data = transform_data(data)
 
-        # Load phase 
+        # Load phase
         logger.info("Starting load phase")
         load_data(transformed_data)
 
