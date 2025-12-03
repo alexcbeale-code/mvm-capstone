@@ -1,4 +1,3 @@
-import os
 from src.extract.extract import extract_data
 from src.load.load import load_data
 from src.load.load import open_streamlit
@@ -13,15 +12,15 @@ def main():
 
     try:
 
-        logger.info("Starting ETL pipeline")
+        logger.info("Starting ETL pipeline ^_^")
 
         # Extraction phase
-        logger.info("Starting extraction phase ^_^")
-        data = extract_data()
+        logger.info("Starting extraction phase")
+        main_report, donation_data = extract_data()
 
         # Transformation phase
         logger.info("Starting transformation phase")
-        transformed_data = transform_data(data)
+        transformed_data = transform_data(main_report, donation_data)
 
         # Load phase
         logger.info("Starting load phase")
