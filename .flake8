@@ -1,5 +1,8 @@
 [flake8]
 # Specify the directories to exclude
+
+
+
 exclude = 
     .pytest_cache,
     .venv,
@@ -12,3 +15,6 @@ exclude =
     htmlcov,
     notebooks,
     tests,
+
+
+max-line-length = 120

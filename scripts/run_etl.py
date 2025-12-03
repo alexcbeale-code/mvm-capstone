@@ -16,7 +16,7 @@ def main():
         logger.info("Starting ETL pipeline")
 
         # Extraction phase
-        logger.info("Starting extraction phase")
+        logger.info("Starting extraction phase ^_^")
         data = extract_data()
 
         # Transformation phase
