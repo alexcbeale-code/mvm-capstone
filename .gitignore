@@ -141,7 +141,10 @@ cython_debug/
 
 # Data files
 data/raw/
+!data/raw/.gitkeep
+!data/raw/action_data/.gitkeep
 data/processed/
+!data/processed/.gitkeep
 data/output/
 
 # Logs
