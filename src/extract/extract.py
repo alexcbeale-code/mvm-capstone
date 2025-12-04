@@ -5,7 +5,7 @@ from src.extract.extract_donations import extract_donations
 logger = setup_logger("extract_data", "extract_data.log")
 
 
-def extract_data():
+def extract_data() -> list:
     '''
     Get the action data into the main report
     Extract the donation data
@@ -32,4 +32,4 @@ def extract_data():
     except Exception as e:
         logger.error(f"Fatal error: Failed to extract donation data: {e}")
         return
-    return df, dono_df
+    return [df, dono_df]

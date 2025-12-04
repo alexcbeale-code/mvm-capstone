@@ -12,8 +12,12 @@ def clean_final_report(main: pd.DataFrame) -> pd.DataFrame:
         logger.error(f"Failed to execute dropping null values in email column: {e}")
 
     try:
-        main.drop(["can2_lifetime_value"], axis=1, inplace=True)
+        main.drop(["lifetime_value"], axis=1, inplace=True)
     except Exception as e:
-        logger.error(f"Failed to drop can2 columns: {e}")
+        logger.error(f"Failed to drop columns: {e}")
 
+    try:
+        main.loc[main["user_tags"].isnull(), "user_tags"] = "no_tags"
+    except Exception as e:
+        logger.error(f"Failed to create no_tags tag: {e}")
     return main

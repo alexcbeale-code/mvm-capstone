@@ -1,16 +1,21 @@
 import os
 import pytest
 from unittest.mock import patch
-
-
+from src.transform.tags import to_list_tags
+import pandas as pd
 
 @patch("os.path.exists")
-def test_setup_env_file_not_found_dev(mock_exists):
-    mock_exists.return_value = False
-    with pytest.raises(
-        FileNotFoundError, match="Environment file '.env.dev' not found"
-    ):
-        setup_env(["script_name", "dev"])
+def test_transform_tags_to_list(mock_exists):
+
+    df = pd.DataFrame(
+        {
+            "can2_user_tags": ["tag1 / tag2 / tag3",  "tag11 / tag12 / tag13", "tag21 / tag22 / tag23"]
+        }
+    )
+
+    result = to_list_tags(df)
+
+    assert result.iloc[0]["can2_user_tags"] == list
 
 
 # @patch("os.path.exists")

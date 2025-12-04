@@ -15,6 +15,3 @@ exclude =
     htmlcov,
     notebooks,
     tests,
-
-
-max-line-length = 1000000000

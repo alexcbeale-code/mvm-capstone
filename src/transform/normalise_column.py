@@ -10,9 +10,10 @@ def normalise_columns(dataframes: list) -> list:
 
     for df in dataframes:
         try:
-            df.columns = df.columns.str.lower().str.replace(' ', '_')
+            df.columns = df.columns.str.lower().str.replace(" ", "_")
+            df.columns = df.columns.str.replace("can2_", "")
             normalised_columns.append(df)
         except Exception as e:
             logger.error(f"Failed to noramlise column names for {df}: {e}")
 
-    return normalised_columns
+    return dataframes
