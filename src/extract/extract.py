@@ -1,7 +1,8 @@
-import pandas as pd
 from src.utils.logging_utils import setup_logger
 from src.extract.extract_actions import combine_action_data_with_main
 from src.extract.extract_donations import extract_donations
+from src.extract.extract_main import extract_main
+
 logger = setup_logger("extract_data", "extract_data.log")
 
 
@@ -13,7 +14,7 @@ def extract_data() -> list:
     logger.info("Extracting main report to dataframe")
 
     try:
-        df = pd.read_csv("data/raw/main_report.csv")
+        df = extract_main()
     except Exception as e:
         logger.error(f"Fatal error: Failed to extract main report data: {e}")
         return
