@@ -28,7 +28,7 @@ Data engineering capstone project for Digital Futures Academy. This project anal
 ### Prerequisites
 
 1. **Python 3.12+** installed
-2. **ActionNetwork Access**: You must have access to an admin level MVM ActionNetwork account
+2. **ActionNetwork Access**: You must have access to an admin level MVM ActionNetwork account (or use sample data)
 3. **Required Data Files**: Obtain the following from ActionNetwork:
    - Donations report (since Jan 1)
    - Supporters report of of "subscribed"
