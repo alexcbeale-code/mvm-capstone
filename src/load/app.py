@@ -3,10 +3,9 @@ import pandas as pd
 import plotly.express as px
 
 
-
 df = pd.read_feather("data/processed/ready_data.feather")
 
-st.title("This Is A Title!")
+st.title("MVM Engagement Analysis!")
 
 st.subheader("Supporter donations vs actions")
 
@@ -91,7 +90,6 @@ fig1.update_layout(
 )
 
 selection1 = st.plotly_chart(fig1, on_select="rerun")
-
 
 
 for tag in multiselect_answers:
