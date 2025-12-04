@@ -1,7 +1,5 @@
 # MakeVotesMatter Engagement Analysis
 
-## 📋 Description
-
 Data engineering capstone project for Digital Futures Academy. This project analyzes engagement patterns for MakeVotesMatter (MVM) by processing donation data, supporter information, and ActionNetwork action data. The goal is to identify demographics and behaviors of both highly engaged and minimally engaged supporters to inform MVM's outreach strategy.
 
 **Questions set by MVM:**
@@ -25,7 +23,7 @@ Data engineering capstone project for Digital Futures Academy. This project anal
 - **Streamlit** - Interactive web application
 - **Dependencies**: See `requirements.txt`
 
-## ⚙️ Installation & Setup
+## Installation & Setup
 
 ### Prerequisites
 
@@ -60,7 +58,44 @@ otherwise visit http://localhost:8501/
 
 ## Repo Structure
 
-put tree here
+```
+├─ data
+│   ├─ processed
+│   │  └─  # .feather generated for streamlit here
+│   └─ raw  # donations.csv and main_report.csv required here
+│      └─ action_data  # '<num>-actions' action data files required here
+│
+├─ requirements.txt
+├─ scripts
+│  └─ run_etl.py
+├─ src
+│  ├─ extract
+│  │  ├─ extract.py
+│  │  ├─ extract_actions.py
+│  │  ├─ extract_donations.py
+│  │  └─ extract_main.py
+│  │  
+│  ├─ load
+│  │  ├─ app.py
+│  │   load.py
+│  │  
+│  ├─ transform
+│  │  ├─ clean_report.py
+│  │  ├─ combine_donations.py
+│  │  ├─ create_scores.py
+│  │  ├─ normalise_column.py
+│  │  ├─ tags.py
+│  │  └─ transform.py
+│  │  
+│  ├─ utils
+│     └─ logging_utils.py
+└─ tests
+   ├─ unit_tests
+   │  ├─ extract_test.py
+   │  └─ transformation_test.py
+
+
+```
 
 ## Testing
 
@@ -71,18 +106,35 @@ Use pytest for testing
 pytest 
 ```
 
-📈 Future Improvements
+## Future Improvements
 
-📄 License
+1. Widen scope on tags to determine demographic
+2. Ability to select any tag for charts not pre-set tags (would remove need for bool cols) 
+3. Api enabled script which could run over set period
+4. Quick-load feature which loads streamlit app without ETL process (uses previous load)
+5. Ensure reliability of ActionNetwork report
+6. Increased and chained logic operations for tag selection on visualisations  
+
+## License
 
 This project was created for educational purposes as part of the Digital Futures Academy curriculum. Please consult with Digital Futures Academy for usage permissions.
 
-Important Notes
+# Important Notes
 
- This project requires manual data export from ActionNetwork (because api takes 4 hours)
+1. This project requires manual data export from ActionNetwork (because api takes like 4 hours)
 
-Sensitive supporter data should be handled according to GDPR regulations
+2. Sensitive supporter data should be handled according to GDPR regulations
 
-Accuracy of results are dependent on recency of data aquired and amount of data
+3. Accuracy of results are dependent on recency of data aquired and amount of data
 
-Contact MVM administrators for access to required data sources
+4. Contact MVM administrators for access to required data sources
+
+
+
+
+
+
+
+
+
+
